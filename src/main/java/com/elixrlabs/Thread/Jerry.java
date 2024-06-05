@@ -6,7 +6,7 @@ public class Jerry extends Thread {
         for (int i = 6; i <= 10; i++) {
             System.out.println(i);
             try {
-                Thread.sleep(3000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
