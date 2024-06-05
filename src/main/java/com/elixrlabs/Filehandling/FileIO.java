@@ -10,7 +10,8 @@ public class FileIO {
             writer.write("hi how are you!");
             writer.write("\n" + "this is the second line dear!");
             for (String name : names) {
-                System.out.println(name);
+                writer.write("\n" + name);
+                //System.out.println(name);
             }
             writer.close();
 
@@ -18,8 +19,15 @@ public class FileIO {
             throw new RuntimeException(e);
         }
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("output"));
+            BufferedReader reader = new BufferedReader(new FileReader("myfile.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
         } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
