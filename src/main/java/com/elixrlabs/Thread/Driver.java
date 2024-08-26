@@ -5,6 +5,7 @@ public class Driver {
         Tom t = new Tom();
         Jerry j = new Jerry();
         t.start();
+        System.out.println("--------------------------------");
         j.start();
     }
 }
